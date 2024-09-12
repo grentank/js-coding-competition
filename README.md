@@ -1,1 +1,5 @@
-# js-coding-competition
+# Coding competition
+
+Задания в папке `tasks`
+
+Тесты запускаются с помощью команды `npm test n`, где вместо `n` подставь номер задачи
