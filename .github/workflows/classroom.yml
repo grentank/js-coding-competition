@@ -1,0 +1,220 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: task-10
+      id: task-10
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-10
+        setup-command: ''
+        command: npm test 10
+        timeout: 1
+        max-score: 1
+    - name: task-11
+      id: task-11
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-11
+        setup-command: ''
+        command: npm test 11
+        timeout: 1
+        max-score: 1
+    - name: task-12
+      id: task-12
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-12
+        setup-command: ''
+        command: npm test 12
+        timeout: 1
+        max-score: 1
+    - name: task-13
+      id: task-13
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-13
+        setup-command: ''
+        command: npm test 13
+        timeout: 1
+        max-score: 1
+    - name: task-14
+      id: task-14
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-14
+        setup-command: ''
+        command: npm test 14
+        timeout: 1
+        max-score: 1
+    - name: task-15
+      id: task-15
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-15
+        setup-command: ''
+        command: npm test 15
+        timeout: 1
+        max-score: 1
+    - name: task-16
+      id: task-16
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-16
+        setup-command: ''
+        command: npm test 16
+        timeout: 1
+        max-score: 1
+    - name: task-17
+      id: task-17
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-17
+        setup-command: ''
+        command: npm test 17
+        timeout: 1
+        max-score: 1
+    - name: task-18
+      id: task-18
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-18
+        setup-command: ''
+        command: npm test 18
+        timeout: 1
+        max-score: 1
+    - name: task-19
+      id: task-19
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-19
+        setup-command: ''
+        command: npm test 19
+        timeout: 1
+        max-score: 1
+    - name: task-20
+      id: task-20
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-20
+        setup-command: ''
+        command: npm test 20
+        timeout: 1
+        max-score: 2
+    - name: task-21
+      id: task-21
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-21
+        setup-command: ''
+        command: npm test 21
+        timeout: 1
+        max-score: 2
+    - name: task-22
+      id: task-22
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-22
+        setup-command: ''
+        command: npm test 22
+        timeout: 1
+        max-score: 2
+    - name: task-23
+      id: task-23
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-23
+        setup-command: ''
+        command: npm test 23
+        timeout: 1
+        max-score: 2
+    - name: task-24
+      id: task-24
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-24
+        setup-command: ''
+        command: npm test 24
+        timeout: 1
+        max-score: 2
+    - name: task-25
+      id: task-25
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-25
+        setup-command: ''
+        command: npm test 25
+        timeout: 1
+        max-score: 2
+    - name: task-26
+      id: task-26
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-26
+        setup-command: ''
+        command: npm test 26
+        timeout: 1
+        max-score: 2
+    - name: task-27
+      id: task-27
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-27
+        setup-command: ''
+        command: npm test 27
+        timeout: 1
+        max-score: 2
+    - name: task-28
+      id: task-28
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-28
+        setup-command: ''
+        command: npm test 28
+        timeout: 1
+        max-score: 2
+    - name: task-29
+      id: task-29
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: task-29
+        setup-command: ''
+        command: npm test 29
+        timeout: 1
+        max-score: 2
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TASK-10_RESULTS: "${{steps.task-10.outputs.result}}"
+        TASK-11_RESULTS: "${{steps.task-11.outputs.result}}"
+        TASK-12_RESULTS: "${{steps.task-12.outputs.result}}"
+        TASK-13_RESULTS: "${{steps.task-13.outputs.result}}"
+        TASK-14_RESULTS: "${{steps.task-14.outputs.result}}"
+        TASK-15_RESULTS: "${{steps.task-15.outputs.result}}"
+        TASK-16_RESULTS: "${{steps.task-16.outputs.result}}"
+        TASK-17_RESULTS: "${{steps.task-17.outputs.result}}"
+        TASK-18_RESULTS: "${{steps.task-18.outputs.result}}"
+        TASK-19_RESULTS: "${{steps.task-19.outputs.result}}"
+        TASK-20_RESULTS: "${{steps.task-20.outputs.result}}"
+        TASK-21_RESULTS: "${{steps.task-21.outputs.result}}"
+        TASK-22_RESULTS: "${{steps.task-22.outputs.result}}"
+        TASK-23_RESULTS: "${{steps.task-23.outputs.result}}"
+        TASK-24_RESULTS: "${{steps.task-24.outputs.result}}"
+        TASK-25_RESULTS: "${{steps.task-25.outputs.result}}"
+        TASK-26_RESULTS: "${{steps.task-26.outputs.result}}"
+        TASK-27_RESULTS: "${{steps.task-27.outputs.result}}"
+        TASK-28_RESULTS: "${{steps.task-28.outputs.result}}"
+        TASK-29_RESULTS: "${{steps.task-29.outputs.result}}"
+      with:
+        runners: task-10,task-11,task-12,task-13,task-14,task-15,task-16,task-17,task-18,task-19,task-20,task-21,task-22,task-23,task-24,task-25,task-26,task-27,task-28,task-29
