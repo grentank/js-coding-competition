@@ -15,4 +15,14 @@ export default [
   },
   pluginJs.configs.recommended,
   ...elbrusConfig,
+  {
+    rules: {
+      'no-sparse-arrays': 'off',
+      'no-console': 'off',
+      'guard-for-in': 'off',
+      'no-restricted-syntax': 'off',
+      'func-names': 'off',
+      'consistent-return': 'off',
+    },
+  },
 ];
